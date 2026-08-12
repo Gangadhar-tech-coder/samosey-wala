@@ -2,8 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Flame, Star, Sparkles, Zap, Heart } from 'lucide-react';
-import samosasImg from '../assets/samosas.jpg';
-import storefrontImg from '../assets/storefront.jpg';
+import combo4SamosaImg from '../assets/combo_4samosa.png';
+import periperiFriesImg from '../assets/periperi_fries.png';
+import milkshakesImg from '../assets/milkshakes.png';
+import teaCoffeeImg from '../assets/tea_coffee.png';
+import cheeseCornPaneerImg from '../assets/cheese_corn_paneer_samosa.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,49 +17,49 @@ const SpecialShowcase = () => {
 
   const specials = [
     {
-      name: 'Samosa Chaat',
-      price: 50,
-      image: samosasImg,
-      icon: <Sparkles size={16} className="text-primary" />,
-      category: 'SIGNATURE SPECIAL',
-      description: 'Our best-selling samosa crushed and topped with spicy chole, tangy chutneys, cool dahi, and crunchy sev. A perfect explosion of flavours in every bite.',
-      tags: ['Tangy', 'Crunchy Sev', 'Cool Dahi', 'Spicy Chole'],
-    },
-    {
-      name: 'Loaded Samosa',
-      price: 75,
-      image: samosasImg,
-      icon: <Zap size={16} className="text-yellow-500" />,
-      category: 'CHEF SPECIAL',
-      description: 'A crispy golden samosa loaded with our signature three-cheese sauce, peri peri seasoning, fresh herbs, and a drizzle of sriracha mayo. Indulgence redefined.',
-      tags: ['Three-Cheese', 'Peri Peri', 'Sriracha Mayo', 'Fresh Herbs'],
-    },
-    {
-      name: 'Samosa Party Box',
-      price: 160,
-      image: samosasImg,
-      icon: <Heart size={16} className="text-red-500" />,
-      category: 'PARTY PACK',
-      description: '10 freshly fried assorted samosas in a premium party box — perfect for office celebrations, house parties, and weekend gatherings. Feeds 4-5 people.',
-      tags: ['10 Pieces', 'Assorted Flavours', 'Party Size', 'Premium Box'],
-    },
-    {
-      name: '2 Samosa + Chai Combo',
-      price: 45,
-      image: storefrontImg,
-      icon: <Star size={16} className="text-amber-500" />,
-      category: 'VALUE COMBO',
-      description: 'The iconic Indian snacking duo — two piping hot crispy samosas paired with our signature masala chai brewed with fresh ginger and whole cardamom.',
-      tags: ['2 Samosas', 'Masala Chai', 'Best Value', 'Classic Pair'],
-    },
-    {
-      name: '4 Samosa + Cold Drink',
-      price: 85,
-      image: samosasImg,
+      name: '4 Samosa + 1 Cold Drink',
+      price: 80,
+      image: combo4SamosaImg,
       icon: <Flame size={16} className="text-orange-500" />,
-      category: 'MEGA COMBO',
-      description: 'Four assorted samosas with a chilled cold drink. Perfect for hunger pangs on the go — grab, munch, and conquer. Our most popular combo by volume.',
-      tags: ['4 Samosas', 'Cold Drink', 'Most Popular', 'On-the-Go'],
+      category: 'VALUE COMBO',
+      description: 'The ultimate combo deal for snacking, sharing, or big appetites. Four freshly fried crispy golden samosas paired with a chilled carbonated soft drink.',
+      tags: ['4 Samosas', 'Chilled Drink', 'Value Deal', 'Best Seller'],
+    },
+    {
+      name: 'Cheese Peri Peri Fries',
+      price: 70,
+      image: periperiFriesImg,
+      icon: <Zap size={16} className="text-yellow-500" />,
+      category: 'FUSION CHAAT & FRIES',
+      description: 'Golden french fries tossed in hot peri-peri seasoning and layered with warm melted cheese sauce. A fiery and cheesy fusion snack favorite.',
+      tags: ['Cheesy Sauce', 'Peri Peri Spiced', 'Crispy French Fries', 'Hot Snacking'],
+    },
+    {
+      name: 'Premium Milkshakes',
+      price: 49,
+      image: milkshakesImg,
+      icon: <Heart size={16} className="text-red-500" />,
+      category: 'BEVERAGES & SHAKES',
+      description: 'Thick, creamy, and chilled milkshakes served in refreshing flavors. Made with fresh milk and ice cream. The perfect sweet companion to hot savory samosas.',
+      tags: ['Thick Shakes', 'Chilled Drink', 'Chocolate & Fruit', 'Sweet Treat'],
+    },
+    {
+      name: 'Tea and Coffee',
+      price: 15,
+      image: teaCoffeeImg,
+      icon: <Star size={16} className="text-amber-500" />,
+      category: 'CLASSIC HOT BEVERAGES',
+      description: 'Authentic hot Indian beverages. Piping hot masala tea brewed with fresh ginger and whole cardamom, or strong aromatic filter coffee.',
+      tags: ['Masala Chai', 'Filter Coffee', 'Fresh Brewed', 'Ginger & Cardamom'],
+    },
+    {
+      name: 'Cheese Corn & Paneer Samosa',
+      price: 30,
+      image: cheeseCornPaneerImg,
+      icon: <Sparkles size={16} className="text-primary" />,
+      category: 'PREMIUM FUSION SELECTION',
+      description: 'Gourmet premium fusion samosas. Golden crispy shell stuffed with sweet corn and liquid melted cheese, or soft seasoned paneer cubes cooked in rich spices.',
+      tags: ['Gourmet Cheese Corn', 'Spiced Paneer', 'Fusion Stuffing', 'Melted Fillings'],
     },
   ];
 
