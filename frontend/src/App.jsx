@@ -7,7 +7,6 @@ import Hero from './components/Hero';
 import ProblemSolution from './components/ProblemSolution';
 import FeatureGrid from './components/FeatureGrid';
 import FoodShowcase from './components/FoodShowcase';
-import CompetitionTable from './components/CompetitionTable';
 import BusinessModel from './components/BusinessModel';
 import StoreFormats from './components/StoreFormats';
 import StoreGallery from './components/StoreGallery';
@@ -81,9 +80,6 @@ function App() {
 
       {/* 5b. Special Items Scroll Showcase with Rotating/Zooming Animation */}
       <SpecialShowcase />
-
-      {/* 7. Competitive Landscape comparison table */}
-      <CompetitionTable />
 
       {/* 8. FOCO Business Flow Model */}
       <BusinessModel />
