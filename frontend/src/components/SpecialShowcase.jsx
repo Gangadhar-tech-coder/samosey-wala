@@ -19,7 +19,7 @@ const SpecialShowcase = () => {
     {
       name: '4 Samosa + 1 Cold Drink',
       price: 80,
-      image: combo4SamosaImg,
+      image: periperiFriesImg,
       icon: <Flame size={16} className="text-orange-500" />,
       category: 'VALUE COMBO',
       description: 'The ultimate combo deal for snacking, sharing, or big appetites. Four freshly fried crispy golden samosas paired with a chilled carbonated soft drink.',
@@ -28,7 +28,7 @@ const SpecialShowcase = () => {
     {
       name: 'Cheese Peri Peri Fries',
       price: 70,
-      image: periperiFriesImg,
+      image: combo4SamosaImg,
       icon: <Zap size={16} className="text-yellow-500" />,
       category: 'FUSION CHAAT & FRIES',
       description: 'Golden french fries tossed in hot peri-peri seasoning and layered with warm melted cheese sauce. A fiery and cheesy fusion snack favorite.',
