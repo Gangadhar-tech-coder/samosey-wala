@@ -96,9 +96,9 @@ const StoreGallery = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="bg-[#0A0A0A] overflow-hidden border-b border-white/5"
+      className="min-h-screen flex flex-col justify-center bg-[#0A0A0A] overflow-hidden border-b border-white/5 py-12"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-4">
         <div className="text-left">
           <span className="text-primary font-bold text-xs tracking-[0.25em] uppercase mb-4 block">
             VISUAL EXPERIENCE

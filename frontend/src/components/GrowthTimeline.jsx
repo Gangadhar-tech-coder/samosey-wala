@@ -32,12 +32,14 @@ const GrowthTimeline = ({ phases }) => {
       const pathLength = path.getTotalLength();
       gsap.set(path, { strokeDasharray: pathLength, strokeDashoffset: pathLength });
 
-      // Create scroll-pinned timeline for horizontal scroll & growth line drawing
-      const tl = gsap.timeline({
+      // 1. Move track horizontally and pin section - slowed down significantly (*2.5 + 1200)
+      const scrollTween = gsap.to(track, {
+        x: -totalScrollWidth,
+        ease: 'none',
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
-          end: `+=${totalScrollWidth + 500}`,
+          end: `+=${totalScrollWidth * 2.5 + 1200}`,
           scrub: true,
           pin: true,
           anticipatePin: 1,
@@ -45,31 +47,37 @@ const GrowthTimeline = ({ phases }) => {
         }
       });
 
-      // 1. Move track horizontally
-      tl.to(track, {
-        x: -totalScrollWidth,
-        ease: 'none'
-      }, 0);
-
-      // 2. Draw the growth line progressively
-      tl.to(path, {
+      // 2. Draw the growth line progressively matched to scroll pinning
+      gsap.to(path, {
         strokeDashoffset: 0,
-        ease: 'none'
-      }, 0);
+        ease: 'none',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top top',
+          end: `+=${totalScrollWidth * 2.5 + 1200}`,
+          scrub: true,
+        }
+      });
 
-      // 3. Animate each card scaling up as it enters viewport
+      // 3. Animate each card scaling up and glowing when it is centered in the viewport
       const cards = track.querySelectorAll('.phase-card');
-      cards.forEach((card, index) => {
-        tl.fromTo(card, 
-          { scale: 0.9, opacity: 0.3, borderColor: 'rgba(255,255,255,0.05)' },
+      cards.forEach((card) => {
+        gsap.fromTo(card, 
+          { scale: 0.9, opacity: 0.3, borderColor: 'rgba(255,255,255,0.05)', boxShadow: 'none' },
           { 
-            scale: 1, 
+            scale: 1.05, 
             opacity: 1, 
-            borderColor: 'rgba(255,102,0,0.4)', 
-            duration: 0.3 
-          },
-          // Trigger card highlight at proportional scroll depths
-          (index / (phases.length - 1)) * 0.8
+            borderColor: 'rgba(255,102,0,0.5)', 
+            boxShadow: '0 0 30px rgba(255,102,0,0.15)',
+            ease: 'power1.out',
+            scrollTrigger: {
+              trigger: card,
+              containerAnimation: scrollTween,
+              start: 'left 70%', // starts scaling as it nears the center
+              end: 'right 30%',  // starts scaling down as it exits the center
+              scrub: true,
+            }
+          }
         );
       });
 
@@ -84,10 +92,10 @@ const GrowthTimeline = ({ phases }) => {
     <section 
       ref={containerRef}
       id="growth"
-      className="bg-[#0A0A0B] overflow-hidden border-b border-white/5"
+      className="min-h-screen flex flex-col justify-center bg-[#0A0A0B] overflow-hidden border-b border-white/5 py-12"
     >
       {/* Section Header */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-4">
         <div className="text-left">
           <span className="text-primary font-bold text-xs tracking-[0.25em] uppercase mb-4 block">
             GROWTH SCALABILITY

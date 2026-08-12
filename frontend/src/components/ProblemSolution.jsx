@@ -134,17 +134,20 @@ const ProblemSolution = () => {
           </div>
 
           {/* Step 3: Samosey Wala */}
-          <div ref={step3Ref} className="glassmorphism p-8 rounded-lg flex flex-col justify-between border-white/5 relative">
+          <div ref={step3Ref} className="glassmorphism p-8 rounded-lg flex flex-col justify-between border-primary/20 shadow-[0_0_20px_rgba(255,102,0,0.1)] relative">
             <div>
-              <div className="w-12 h-12 bg-green-950/40 border border-green-500/30 rounded flex items-center justify-center text-green-500 mb-6">
+              <div className="w-12 h-12 bg-primary/10 border border-primary/30 rounded flex items-center justify-center text-primary mb-6">
                 <Award size={24} />
               </div>
-              <h3 className="text-xl font-bold font-sans text-white mb-4">SAMOSEY WALA</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <h3 className="text-xl font-bold mb-4 flex items-center space-x-1">
+                <span className="font-logo-brush text-white text-lg">SAMOSEY</span>
+                <span className="font-logo-block text-primary text-base">— WALA —</span>
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
                 A standardized QSR model marrying traditional spices with modern hygiene, utilizing high-quality wheat-maida blends, offering pure, delicious, and scalable snacks.
               </p>
             </div>
-            <div className="mt-8 text-green-500/30 font-black text-6xl text-right">03</div>
+            <div className="mt-8 text-primary/30 font-black text-6xl text-right font-logo-block">03</div>
           </div>
 
         </div>
