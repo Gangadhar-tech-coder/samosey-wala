@@ -18,6 +18,7 @@ import GrowthTimeline from './components/GrowthTimeline';
 import FounderSection from './components/FounderSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import SpecialShowcase from './components/SpecialShowcase';
 
 function App() {
   const [appData, setAppData] = useState({
@@ -78,6 +79,9 @@ function App() {
 
       {/* 5. Cinematic Food Experience Showcase */}
       <FoodShowcase products={appData.products} />
+
+      {/* 5b. Special Items Scroll Showcase with Rotating/Zooming Animation */}
+      <SpecialShowcase />
 
       {/* 6. Investor Opportunity Metrics */}
       <MarketOpportunity metrics={appData.metrics} />
