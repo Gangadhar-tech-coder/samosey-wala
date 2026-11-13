@@ -1,0 +1,134 @@
+{% load static %}
+<!-- Footer -->
+<footer class="footer-sw" style="background-color:#140C08;color:#fff;padding:70px 0 25px;border-top:3px solid #FF5500;">
+    <div class="container">
+        <!-- Row 1: Four Columns -->
+        <div class="row g-4 mb-4">
+            <!-- Col 1: Brand -->
+            <div class="col-lg-4 col-md-6">
+                <a href="{% url 'core:home' %}" class="d-inline-block mb-3 text-decoration-none">
+                    <img src="{% static 'images/logo_footer.png' %}" alt="Samosey Wala" style="height:54px;width:auto;border-radius:10px;display:block;box-shadow:0 4px 14px rgba(0,0,0,0.35);">
+                </a>
+                <p style="color:rgba(255,255,255,0.75);font-family:'Poppins',sans-serif;font-size:0.9rem;line-height:1.7;max-width:320px;margin-bottom:20px;">
+                    Premium Indian snacks crafted with authentic spices, fresh ingredients and passion. Hot and crispy every single time.
+                </p>
+                <!-- Social Icons -->
+                <div class="d-flex align-items-center gap-2">
+                    {% if site_config.instagram_url %}
+                    <a href="{{ site_config.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:#FF5500;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem;transition:all 0.3s;" onmouseover="this.style.background='#FF5500';this.style.color='#fff';" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='#FF5500';">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    {% endif %}
+                    {% if site_config.facebook_url %}
+                    <a href="{{ site_config.facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:#FF5500;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem;transition:all 0.3s;" onmouseover="this.style.background='#FF5500';this.style.color='#fff';" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='#FF5500';">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    {% endif %}
+                    {% if site_config.whatsapp_number %}
+                    <a href="https://wa.me/{{ site_config.whatsapp_number }}" target="_blank" rel="noopener" aria-label="WhatsApp" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:#25D366;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem;transition:all 0.3s;" onmouseover="this.style.background='#25D366';this.style.color='#fff';" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='#25D366';">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    {% endif %}
+                    {% if site_config.google_maps_embed %}
+                    <a href="{{ site_config.google_maps_embed }}" target="_blank" rel="noopener" aria-label="Google Maps" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:#FFB347;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem;transition:all 0.3s;" onmouseover="this.style.background='#FFB347';this.style.color='#18120F';" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='#FFB347';">
+                        <i class="fas fa-location-dot"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Col 2: Quick Links -->
+            <div class="col-lg-2 col-md-6 col-6">
+                <h6 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;color:#FFFFFF;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:18px;">Quick Links</h6>
+                <ul class="list-unstyled mb-0" style="font-family:'Poppins',sans-serif;font-size:0.9rem;">
+                    <li class="mb-2"><a href="{% url 'core:home' %}" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Home</a></li>
+                    <li class="mb-2"><a href="{% url 'core:about' %}" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">About Us</a></li>
+                    <li class="mb-2"><a href="{% url 'products:menu' %}" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Menu</a></li>
+                    <li class="mb-2"><a href="{% url 'orders:order_page' %}" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Order Online</a></li>
+                    <li class="mb-2"><a href="{% url 'enquiries:contact' %}" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Contact Us</a></li>
+                    <li class="mb-2"><a href="{% url 'enquiries:franchise' %}" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Franchise</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Categories -->
+            <div class="col-lg-2 col-md-6 col-6">
+                <h6 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;color:#FFFFFF;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:18px;">Our Menu</h6>
+                <ul class="list-unstyled mb-0" style="font-family:'Poppins',sans-serif;font-size:0.9rem;">
+                    <li class="mb-2"><a href="{% url 'products:menu' %}?category=classic-samosas" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Classic Samosas</a></li>
+                    <li class="mb-2"><a href="{% url 'products:menu' %}?category=fusion-samosas" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Fusion Samosas</a></li>
+                    <li class="mb-2"><a href="{% url 'products:menu' %}?category=sweet-samosas" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Sweet Samosas</a></li>
+                    <li class="mb-2"><a href="{% url 'products:menu' %}?category=chaats-sides" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Chaats &amp; Sides</a></li>
+                    <li class="mb-2"><a href="{% url 'products:menu' %}?category=beverages" style="color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Chai &amp; Beverages</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Contact Info -->
+            <div class="col-lg-4 col-md-6">
+                <h6 style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;color:#FFFFFF;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:18px;">Contact &amp; Order</h6>
+                <ul class="list-unstyled mb-0" style="font-family:'Poppins',sans-serif;font-size:0.9rem;">
+                    <!-- WhatsApp -->
+                    <li class="mb-3 d-flex align-items-center">
+                        <span style="width:34px;height:34px;border-radius:8px;background:rgba(37,211,102,0.15);color:#25D366;display:inline-flex;align-items:center;justify-content:center;margin-right:12px;flex-shrink:0;">
+                            <i class="fab fa-whatsapp"></i>
+                        </span>
+                        <div>
+                            <span class="d-block" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px;">WhatsApp Ordering</span>
+                            <a href="https://wa.me/{{ site_config.whatsapp_number }}" target="_blank" rel="noopener" style="color:#FFFFFF;text-decoration:none;font-weight:600;" onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='#FFFFFF'">
+                                +91 93981 15836
+                            </a>
+                        </div>
+                    </li>
+                    <!-- Phone -->
+                    <li class="mb-3 d-flex align-items-center">
+                        <span style="width:34px;height:34px;border-radius:8px;background:rgba(255,85,0,0.15);color:#FF5500;display:inline-flex;align-items:center;justify-content:center;margin-right:12px;flex-shrink:0;">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                        <div>
+                            <span class="d-block" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px;">Call Us</span>
+                            <a href="tel:+919398115836" style="color:#FFFFFF;text-decoration:none;font-weight:600;" onmouseover="this.style.color='#FF5500'" onmouseout="this.style.color='#FFFFFF'">
+                                {{ site_config.phone }}
+                            </a>
+                        </div>
+                    </li>
+                    <!-- Location / Google Maps Link -->
+                    {% if site_config.google_maps_embed %}
+                    <li class="mb-3 d-flex align-items-center">
+                        <span style="width:34px;height:34px;border-radius:8px;background:rgba(255,179,71,0.15);color:#FFB347;display:inline-flex;align-items:center;justify-content:center;margin-right:12px;flex-shrink:0;">
+                            <i class="fas fa-location-dot"></i>
+                        </span>
+                        <div>
+                            <span class="d-block" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px;">Store Location</span>
+                            <a href="{{ site_config.google_maps_embed }}" target="_blank" rel="noopener" style="color:#FFFFFF;text-decoration:none;font-weight:500;" onmouseover="this.style.color='#FFB347'" onmouseout="this.style.color='#FFFFFF'">
+                                View on Google Maps <i class="fas fa-arrow-up-right-from-square ms-1" style="font-size:0.75rem;"></i>
+                            </a>
+                        </div>
+                    </li>
+                    {% endif %}
+                    <!-- Business Hours -->
+                    <li class="d-flex align-items-center">
+                        <span style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.1);color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;margin-right:12px;flex-shrink:0;">
+                            <i class="far fa-clock"></i>
+                        </span>
+                        <div>
+                            <span class="d-block" style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.5px;">Open Hours</span>
+                            <span style="color:rgba(255,255,255,0.9);font-weight:500;">{{ site_config.business_hours }}</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Row 2: Bottom Bar -->
+        <hr style="border-color:rgba(255,255,255,0.1);margin:25px 0 20px;">
+        <div class="row align-items-center" style="font-family:'Poppins',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.5);">
+            <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                &copy; 2026 Samosey Wala. All rights reserved.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <span class="d-inline-flex align-items-center gap-1">
+                    Hot &amp; Crispy <span style="color:#FF5500;">&#9679;</span> 100% Hygienic Food
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,250 @@
+/* ==========================================================================
+   Samosey Wala - Components Stylesheet
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Swiper Customization
+   -------------------------------------------------------------------------- */
+.swiper {
+  padding-bottom: 50px !important;
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: var(--charcoal);
+  opacity: 0.25;
+  transition: var(--transition);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary) !important;
+  opacity: 1;
+  width: 24px;
+  border-radius: 6px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary) !important;
+  width: 44px;
+  height: 44px;
+  background-color: var(--white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.1rem !important;
+  font-weight: 700;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: var(--primary);
+  color: var(--white) !important;
+  box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   2. Alert / Notification Styles
+   -------------------------------------------------------------------------- */
+.alert-sw {
+  border-radius: var(--radius-sm);
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.alert-sw-success {
+  background-color: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+
+.alert-sw-danger {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.alert-sw-warning {
+  background-color: #fffbeb;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+.alert-sw-info {
+  background-color: #f0fdfa;
+  border-color: #99f6e4;
+  color: #115e59;
+}
+
+/* --------------------------------------------------------------------------
+   3. Loading Spinner
+   -------------------------------------------------------------------------- */
+.spinner-sw {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(161, 91, 35, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 0.8s linear infinite;
+}
+
+.spinner-sw-sm {
+  width: 18px;
+  height: 18px;
+  border-width: 2px;
+}
+
+.spinner-sw-light {
+  border-color: rgba(255, 255, 255, 0.3);
+  border-top-color: var(--white);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Modal Styles
+   -------------------------------------------------------------------------- */
+.modal-sw .modal-content {
+  border-radius: var(--radius-md);
+  border: none;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.modal-sw .modal-header {
+  background-color: var(--warm-cream);
+  border-bottom: 1px solid #ebd9c8;
+  padding: 20px 24px;
+}
+
+.modal-sw .modal-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--charcoal);
+  font-size: 1.3rem;
+}
+
+.modal-sw .modal-body {
+  padding: 24px;
+  font-size: 0.95rem;
+}
+
+.modal-sw .modal-footer {
+  border-top: 1px solid #ebd9c8;
+  padding: 16px 24px;
+  background-color: #faf7f2;
+}
+
+/* --------------------------------------------------------------------------
+   5. Toast Notification (Added to cart & generic)
+   -------------------------------------------------------------------------- */
+.toast-notification {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10000;
+  min-width: 280px;
+  padding: 16px 22px;
+  background-color: var(--white);
+  color: var(--charcoal);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-left: 5px solid var(--primary);
+  pointer-events: none;
+}
+
+.toast-notification.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.toast-notification.toast-success {
+  border-left-color: #22c55e;
+}
+
+.toast-notification.toast-success i {
+  color: #22c55e;
+  font-size: 1.2rem;
+}
+
+.toast-notification.toast-error {
+  border-left-color: #ef4444;
+}
+
+.toast-notification.toast-error i {
+  color: #ef4444;
+  font-size: 1.2rem;
+}
+
+.toast-notification.toast-info {
+  border-left-color: var(--primary);
+}
+
+.toast-notification.toast-info i {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Badge Styles
+   -------------------------------------------------------------------------- */
+.badge-sw {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-sw-primary {
+  background-color: rgba(161, 91, 35, 0.12);
+  color: var(--primary);
+}
+
+.badge-sw-dark {
+  background-color: var(--deep-brown);
+  color: var(--white);
+}
+
+.badge-sw-golden {
+  background-color: #fbf3e8;
+  color: #a15b23;
+  border: 1px solid var(--golden);
+}
+
+.badge-sw-veg {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.badge-sw-nonveg {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}

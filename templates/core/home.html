@@ -1,0 +1,396 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home — Samosey Wala{% endblock %}
+{% block meta_description %}Samosey Wala — India's favourite samosa brand. Hot, crispy and freshly prepared samosas with 50+ unique varieties. Order online now!{% endblock %}
+
+{% block content %}
+
+<!-- ========== SECTION 1: HERO ========== -->
+<section class="hero-section section-cream" style="background-color:#FFF9F5;min-height:90vh;display:flex;align-items:center;padding:120px 0 80px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left Column -->
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                <span class="badge mb-3" style="background-color:rgba(255,85,0,0.1);color:#FF5500;padding:10px 20px;border-radius:30px;font-family:'Poppins',sans-serif;font-size:0.9rem;font-weight:500;">
+                    🔥 #1 Samosa Brand
+                </span>
+                <h1 style="font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;color:#211C18;line-height:1.2;margin-bottom:20px;">
+                    Every Bite Has<br>a Story.
+                </h1>
+                <p style="font-family:'Poppins',sans-serif;font-size:1.1rem;color:#555;line-height:1.8;margin-bottom:35px;">
+                    Experience the perfect blend of traditional Indian flavours, crispy textures and irresistible fillings.
+                </p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="{% url 'products:menu' %}" class="btn btn-outline-sw" style="border:2px solid #FF5500;color:#FF5500;border-radius:30px;padding:12px 30px;font-family:'Poppins',sans-serif;font-weight:600;transition:all 0.3s;">
+                        Explore Menu
+                    </a>
+                    <a href="{% url 'orders:order_page' %}" class="btn btn-primary-sw" style="background-color:#FF5500;color:#fff;border-radius:30px;padding:12px 30px;font-family:'Poppins',sans-serif;font-weight:600;transition:all 0.3s;">
+                        Order Now
+                    </a>
+                </div>
+            </div>
+            <!-- Right Column -->
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="hero-image-wrapper" style="width:100%;max-height:520px;border-radius:24px;overflow:hidden;box-shadow:0 15px 40px rgba(84,43,24,0.15);">
+                    <img src="{% static 'images/hero_samosa.png' %}" alt="Hot and Crispy Samosas" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SECTION 2: BRAND INTRODUCTION ========== -->
+<section class="section-padding section-white" style="background-color:#fff;padding:80px 0;">
+    <div class="container">
+        <div class="row align-items-center" data-aos="fade-up">
+            <!-- Left Column -->
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;margin-bottom:20px;">
+                    Not Just a Samosa.<br>It's an Experience.
+                </h2>
+                <p style="font-family:'Poppins',sans-serif;color:#555;line-height:1.8;margin-bottom:25px;">
+                    Samosey Wala is a modern Indian snack brand redefining the humble samosa. From traditional classics to bold fusion creations, we bring you an unmatched variety crafted with the finest ingredients.
+                </p>
+                <ul class="list-unstyled" style="font-family:'Poppins',sans-serif;">
+                    <li class="mb-3 d-flex align-items-center" style="color:#333;">
+                        <i class="fas fa-check-circle me-3" style="color:#FF5500;font-size:1.2rem;"></i>
+                        <span><strong>50+ Unique Varieties</strong></span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center" style="color:#333;">
+                        <i class="fas fa-check-circle me-3" style="color:#FF5500;font-size:1.2rem;"></i>
+                        <span><strong>Freshly Prepared Daily</strong></span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center" style="color:#333;">
+                        <i class="fas fa-check-circle me-3" style="color:#FF5500;font-size:1.2rem;"></i>
+                        <span><strong>100% Hygienic</strong></span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center" style="color:#333;">
+                        <i class="fas fa-check-circle me-3" style="color:#FF5500;font-size:1.2rem;"></i>
+                        <span><strong>Affordable Prices</strong></span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Right Column -->
+            <div class="col-lg-6">
+                <div style="width:100%;max-height:420px;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,0.1);">
+                    <img src="{% static 'images/samosa_special.png' %}" alt="Samosey Wala Experience" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SECTION 3: BESTSELLERS (Customer Favourites) ========== -->
+<section class="section-padding section-cream" style="background-color:#FFF9F5;padding:80px 0;">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;">Customer Favourites</h2>
+            <p style="font-family:'Poppins',sans-serif;color:#555;margin-top:10px;">Our most loved samosas, handpicked by you.</p>
+        </div>
+
+        <!-- Swiper Carousel -->
+        <div class="swiper bestsellers-swiper bestseller-swiper" data-aos="fade-up">
+            <div class="swiper-wrapper">
+                {% for product in featured_products %}
+                <div class="swiper-slide">
+                    <div class="product-card" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.08);transition:all 0.3s ease;">
+                        <!-- Product Image -->
+                        <div style="position:relative;overflow:hidden;height:220px;">
+                            {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:100%;height:100%;object-fit:cover;transition:transform 0.3s ease;">
+                            {% else %}
+                            <div style="width:100%;height:100%;background:linear-gradient(135deg,#FFB347,#FF6600);display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-utensils" style="font-size:3rem;color:rgba(255,255,255,0.4);"></i>
+                            </div>
+                            {% endif %}
+                            <!-- Veg/Non-Veg Badge -->
+                            <span style="position:absolute;top:12px;left:12px;width:20px;height:20px;border-radius:4px;border:2px solid {% if product.is_vegetarian %}#27ae60{% else %}#e74c3c{% endif %};display:flex;align-items:center;justify-content:center;background:#fff;">
+                                <span style="width:10px;height:10px;border-radius:50%;background:{% if product.is_vegetarian %}#27ae60{% else %}#e74c3c{% endif %};"></span>
+                            </span>
+                        </div>
+                        <!-- Product Info -->
+                        <div style="padding:20px;">
+                            <h5 style="font-family:'Playfair Display',serif;font-weight:600;color:#211C18;margin-bottom:8px;">{{ product.name }}</h5>
+                            <p style="font-family:'Poppins',sans-serif;font-size:0.85rem;color:#777;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{ product.description }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;color:#FF5500;">₹{{ product.price }}</span>
+                                <a href="{% url 'orders:order_page' %}" class="btn btn-sm" style="background-color:#FF5500;color:#fff;border-radius:20px;padding:6px 18px;font-family:'Poppins',sans-serif;font-size:0.85rem;">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination swiper-pagination-bestsellers mt-4"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SECTION 4: EXPLORE OUR MENU (Categories) ========== -->
+<section class="section-padding section-white" style="background-color:#fff;padding:80px 0;">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;">Explore Our Menu</h2>
+            <p style="font-family:'Poppins',sans-serif;color:#555;margin-top:10px;">Find your favourite flavour from our wide range of categories.</p>
+        </div>
+        <div class="row g-4">
+            {% for category in categories %}
+            <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:0 }}00">
+                <a href="{% url 'products:menu' %}?category={{ category.slug }}" style="text-decoration:none;">
+                    <div style="position:relative;border-radius:16px;overflow:hidden;height:250px;">
+                        {% if category.image %}
+                        <img src="{{ category.image.url }}" alt="{{ category.name }}" style="width:100%;height:100%;object-fit:cover;transition:transform 0.3s ease;">
+                        {% else %}
+                        <div style="width:100%;height:100%;background:linear-gradient(135deg,#FF6600,#1F100A);"></div>
+                        {% endif %}
+                        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.1) 100%);display:flex;align-items:flex-end;padding:20px;transition:all 0.3s ease;">
+                            <h5 style="font-family:'Playfair Display',serif;color:#fff;font-weight:600;margin:0;">{{ category.name }}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ========== SECTION 5: WHY CHOOSE SAMOSEY WALA ========== -->
+<section class="section-padding section-cream" style="background-color:#FFF9F5;padding:80px 0;">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;">Good Food. Great Taste. Every Time.</h2>
+        </div>
+        <div class="row g-4">
+            <!-- Feature 1 -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="text-center" style="background:#fff;border-radius:16px;padding:40px 25px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+                    <div style="width:70px;height:70px;border-radius:50%;background:rgba(255,85,0,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                        <i class="fas fa-fire" style="font-size:1.5rem;color:#FF5500;"></i>
+                    </div>
+                    <h5 style="font-family:'Playfair Display',serif;font-weight:600;color:#211C18;margin-bottom:10px;">Freshly Prepared</h5>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#777;">Every samosa is made fresh, ensuring the perfect crunch in every bite.</p>
+                </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center" style="background:#fff;border-radius:16px;padding:40px 25px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+                    <div style="width:70px;height:70px;border-radius:50%;background:rgba(255,85,0,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                        <i class="fas fa-shield-halved" style="font-size:1.5rem;color:#FF5500;"></i>
+                    </div>
+                    <h5 style="font-family:'Playfair Display',serif;font-weight:600;color:#211C18;margin-bottom:10px;">Hygienic Preparation</h5>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#777;">We maintain the highest standards of cleanliness and food safety.</p>
+                </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-center" style="background:#fff;border-radius:16px;padding:40px 25px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+                    <div style="width:70px;height:70px;border-radius:50%;background:rgba(255,85,0,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                        <i class="fas fa-leaf" style="font-size:1.5rem;color:#FF5500;"></i>
+                    </div>
+                    <h5 style="font-family:'Playfair Display',serif;font-weight:600;color:#211C18;margin-bottom:10px;">Natural Ingredients</h5>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#777;">Only the finest natural ingredients and authentic Indian spices.</p>
+                </div>
+            </div>
+            <!-- Feature 4 -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-center" style="background:#fff;border-radius:16px;padding:40px 25px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+                    <div style="width:70px;height:70px;border-radius:50%;background:rgba(255,85,0,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                        <i class="fas fa-star" style="font-size:1.5rem;color:#FF5500;"></i>
+                    </div>
+                    <h5 style="font-family:'Playfair Display',serif;font-weight:600;color:#211C18;margin-bottom:10px;">Authentic Indian Flavours</h5>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#777;">Traditional recipes with a modern twist, crafted with love.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SECTION 6: FOOD PHILOSOPHY ========== -->
+<section class="section-padding section-white" style="background-color:#fff;padding:80px 0;">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left: Image -->
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                <div style="width:100%;max-height:420px;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,0.08);">
+                    <img src="{% static 'images/samosa_platter.png' %}" alt="Authentic Food Philosophy" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+            </div>
+            <!-- Right: Content -->
+            <div class="col-lg-6" data-aos="fade-left">
+                <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;margin-bottom:20px;">
+                    Fresh. Healthy.<br>Affordable. Made Right.
+                </h2>
+                <p style="font-family:'Poppins',sans-serif;color:#555;line-height:1.8;margin-bottom:25px;">
+                    At Samosey Wala, our food philosophy is rooted in authenticity, quality, and care. Every ingredient is handpicked, every recipe perfected over time, and every samosa made to deliver pure joy.
+                </p>
+                <ul class="list-unstyled" style="font-family:'Poppins',sans-serif;">
+                    <li class="mb-3 d-flex align-items-center" style="color:#333;">
+                        <i class="fas fa-check me-3" style="color:#FF5500;"></i>
+                        <span>Natural Ingredients</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center" style="color:#333;">
+                        <i class="fas fa-check me-3" style="color:#FF5500;"></i>
+                        <span>Authentic Indian Spices</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center" style="color:#333;">
+                        <i class="fas fa-check me-3" style="color:#FF5500;"></i>
+                        <span>Zero Preservatives</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center" style="color:#333;">
+                        <i class="fas fa-check me-3" style="color:#FF5500;"></i>
+                        <span>50:50 Maida &amp; Wheat Flour Blend</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SECTION 7: PROMOTIONAL BANNER ========== -->
+<section class="section-padding section-dark" style="background-color:#1F100A;padding:80px 0;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-up">
+                <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#fff;margin-bottom:15px;">
+                    Your Favourite Samosa Is Just One Click Away.
+                </h2>
+                <p style="font-family:'Poppins',sans-serif;color:rgba(255,255,255,0.8);font-size:1.1rem;margin-bottom:30px;">
+                    Skip the queue, browse our menu and place your order online. Fresh, hot samosas delivered straight to you.
+                </p>
+                <a href="{% url 'orders:order_page' %}" class="btn" style="border:2px solid #FFB347;color:#fff;border-radius:30px;padding:14px 35px;font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;transition:all 0.3s;">
+                    Order Now <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
+                <div style="width:100%;max-height:320px;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,0.25);">
+                    <img src="{% static 'images/hero_breaking.png' %}" alt="Order Samosas" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SECTION 8: CUSTOMER TESTIMONIALS ========== -->
+<section class="section-padding section-cream" style="background-color:#FFF9F5;padding:80px 0;">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;">What Our Customers Say</h2>
+            <p style="font-family:'Poppins',sans-serif;color:#555;margin-top:10px;">Real reviews from our happy customers.</p>
+        </div>
+
+        <div class="swiper testimonials-swiper testimonial-swiper" data-aos="fade-up">
+            <div class="swiper-wrapper">
+                {% for testimonial in testimonials %}
+                <div class="swiper-slide">
+                    <div style="background:#fff;border-radius:16px;padding:35px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+                        <!-- Star Rating -->
+                        <div class="mb-3">
+                            {% for i in "12345" %}
+                                {% if forloop.counter <= testimonial.rating %}
+                                <i class="fas fa-star" style="color:#FFB347;font-size:1rem;"></i>
+                                {% else %}
+                                <i class="far fa-star" style="color:#FFB347;font-size:1rem;"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <!-- Review -->
+                        <p style="font-family:'Poppins',sans-serif;color:#555;font-style:italic;line-height:1.7;margin-bottom:20px;">
+                            "{{ testimonial.review }}"
+                        </p>
+                        <!-- Customer Name -->
+                        <h6 style="font-family:'Playfair Display',serif;font-weight:600;color:#211C18;margin:0;">
+                            — {{ testimonial.customer_name }}
+                        </h6>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination swiper-pagination-testimonials mt-4"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SECTION 9: CONTACT PREVIEW (Visit Us) ========== -->
+<section class="section-padding section-white" style="background-color:#fff;padding:80px 0;">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;">Visit Us</h2>
+            <p style="font-family:'Poppins',sans-serif;color:#555;margin-top:10px;">We'd love to see you. Drop by or get in touch!</p>
+        </div>
+
+        <div class="row g-4 mb-5" data-aos="fade-up">
+            <!-- Info Card: Location / Google Maps -->
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center h-100" style="background:#FFF9F5;border-radius:16px;padding:30px 20px;border:1px solid rgba(255,85,0,0.1);">
+                    <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,85,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                        <i class="fas fa-location-dot" style="font-size:1.3rem;color:#FF5500;"></i>
+                    </div>
+                    <h6 style="font-family:'Poppins',sans-serif;font-weight:700;color:#18120F;margin-bottom:8px;">Store Location</h6>
+                    {% if site_config.google_maps_embed %}
+                    <a href="{{ site_config.google_maps_embed }}" target="_blank" rel="noopener" style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#FF5500;text-decoration:none;font-weight:600;">
+                        Open in Google Maps <i class="fas fa-arrow-up-right-from-square ms-1" style="font-size:0.75rem;"></i>
+                    </a>
+                    {% else %}
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#777;margin:0;">{{ site_config.address }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- Info Card: Phone / WhatsApp -->
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center h-100" style="background:#FFF9F5;border-radius:16px;padding:30px 20px;border:1px solid rgba(255,85,0,0.1);">
+                    <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,85,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                        <i class="fas fa-phone-alt" style="font-size:1.3rem;color:#FF5500;"></i>
+                    </div>
+                    <h6 style="font-family:'Poppins',sans-serif;font-weight:700;color:#18120F;margin-bottom:8px;">Call &amp; WhatsApp</h6>
+                    <a href="tel:+919398115836" style="font-family:'Poppins',sans-serif;font-size:0.95rem;color:#18120F;text-decoration:none;font-weight:600;display:block;margin-bottom:4px;">{{ site_config.phone }}</a>
+                    <a href="https://wa.me/{{ site_config.whatsapp_number }}" target="_blank" rel="noopener" style="font-family:'Poppins',sans-serif;font-size:0.85rem;color:#25D366;text-decoration:none;font-weight:600;">
+                        <i class="fab fa-whatsapp me-1"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <!-- Info Card: Social Links -->
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center h-100" style="background:#FFF9F5;border-radius:16px;padding:30px 20px;border:1px solid rgba(255,85,0,0.1);">
+                    <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,85,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                        <i class="fas fa-share-nodes" style="font-size:1.3rem;color:#FF5500;"></i>
+                    </div>
+                    <h6 style="font-family:'Poppins',sans-serif;font-weight:700;color:#18120F;margin-bottom:10px;">Connect With Us</h6>
+                    <div class="d-flex justify-content-center gap-2">
+                        {% if site_config.instagram_url %}
+                        <a href="{{ site_config.instagram_url }}" target="_blank" rel="noopener" style="width:36px;height:36px;border-radius:50%;background:#FF5500;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:0.95rem;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        {% endif %}
+                        {% if site_config.facebook_url %}
+                        <a href="{{ site_config.facebook_url }}" target="_blank" rel="noopener" style="width:36px;height:36px;border-radius:50%;background:#FF5500;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:0.95rem;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <!-- Info Card: Business Hours -->
+            <div class="col-lg-3 col-md-6">
+                <div class="text-center h-100" style="background:#FFF9F5;border-radius:16px;padding:30px 20px;border:1px solid rgba(255,85,0,0.1);">
+                    <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,85,0,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 15px;">
+                        <i class="far fa-clock" style="font-size:1.3rem;color:#FF5500;"></i>
+                    </div>
+                    <h6 style="font-family:'Poppins',sans-serif;font-weight:700;color:#18120F;margin-bottom:8px;">Business Hours</h6>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#555;margin:0;">{{ site_config.business_hours }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Google Maps -->
+        {% if site_config.google_maps_embed %}
+        <div data-aos="fade-up">
+            <div style="border-radius:16px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.08);">
+                {{ site_config.google_maps_embed|safe }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}

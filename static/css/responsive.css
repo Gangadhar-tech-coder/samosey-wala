@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Samosey Wala - Responsive Stylesheet
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Screen width <= 1200px (Desktops & Large Tablets)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .section-heading {
+    font-size: 2.2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Screen width <= 992px (Tablets & Small Laptops)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 50px;
+  }
+
+  .hero-section p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image-placeholder {
+    height: 350px;
+    margin-top: 35px;
+  }
+
+  .cart-sidebar {
+    position: relative;
+    top: auto;
+    margin-top: 30px;
+  }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .navbar-collapse {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    margin-top: 15px;
+  }
+
+  .navbar-sw {
+    background-color: var(--white);
+    box-shadow: var(--shadow-sm);
+    padding: 12px 0;
+  }
+
+  .navbar-sw .nav-link-sw {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .navbar-sw .nav-link-sw::after {
+    left: 0;
+    transform: none;
+  }
+
+  .navbar-sw .nav-link-sw:hover::after,
+  .navbar-sw .nav-link-sw.active::after {
+    width: 30px;
+  }
+
+  .navbar-sw .btn-order-now {
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Screen width <= 768px (Tablets & Large Phones)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .category-filter {
+    gap: 8px;
+  }
+
+  .category-filter .filter-btn {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+
+  .page-hero {
+    padding: 100px 0 40px;
+  }
+
+  .page-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .footer-sw {
+    text-align: center;
+  }
+
+  .footer-sw .social-links {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Screen width <= 576px (Mobile Phones)
+   -------------------------------------------------------------------------- */
+@media (max-width: 576px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 90px;
+    padding-bottom: 40px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+  }
+
+  .section-subheading {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .promo-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .promo-section p {
+    font-size: 0.95rem;
+  }
+
+  .whatsapp-float {
+    right: 15px;
+    bottom: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .hero-buttons .btn-primary-sw,
+  .hero-buttons .btn-outline-sw,
+  .product-card .btn-add-cart,
+  .contact-form .btn-primary-sw,
+  .franchise-form .btn-primary-sw,
+  .btn-order-now {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-link-sw {
+    padding: 12px 0;
+  }
+
+  .search-bar input {
+    padding: 12px 18px 12px 45px;
+    font-size: 0.9rem;
+  }
+
+  .search-bar i {
+    left: 16px;
+  }
+}

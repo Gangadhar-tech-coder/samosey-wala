@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us — Samosey Wala{% endblock %}
+{% block meta_description %}Learn about Samosey Wala — our story, vision, food philosophy, and commitment to delivering the crispiest, freshest samosas across India.{% endblock %}
+
+{% block content %}
+
+<!-- Hero Banner -->
+<section class="section-cream" style="background-color:#FFF9F5;padding:120px 0 60px;">
+    <div class="container text-center" data-aos="fade-up">
+        <h1 style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:#211C18;margin-bottom:15px;">
+            About Samosey Wala
+        </h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center" style="font-family:'Poppins',sans-serif;font-size:0.95rem;">
+                <li class="breadcrumb-item"><a href="{% url 'core:home' %}" style="color:#FF5500;text-decoration:none;">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color:#666;">About Us</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Section 2: Our Story -->
+<section style="background-color:#fff;padding:80px 0;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                <span class="badge mb-3" style="background-color:rgba(255,85,0,0.1);color:#FF5500;padding:8px 18px;border-radius:30px;font-family:'Poppins',sans-serif;font-weight:600;">OUR HERITAGE</span>
+                <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;margin-bottom:20px;">
+                    Crafting Samosas with Passion &amp; Purpose
+                </h2>
+                <p style="font-family:'Poppins',sans-serif;color:#555;line-height:1.8;margin-bottom:20px;">
+                    Samosey Wala was born from a simple yet ambitious dream: to take India’s quintessential tea-time snack and celebrate its boundless potential. For generations, the samosa has brought people together across streets, family gatherings, and evening chai breaks.
+                </p>
+                <p style="font-family:'Poppins',sans-serif;color:#555;line-height:1.8;margin-bottom:0;">
+                    We saw an opportunity to honour this culinary heritage while elevating hygiene, freshness, and creativity. By pairing authentic slow-roasted spice blends with golden, crunchy crusts and playful fillings, Samosey Wala has evolved into a beloved modern snacking destination.
+                </p>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div style="width:100%;max-height:420px;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,0.1);">
+                    <img src="{% static 'images/samosa_classic.png' %}" alt="Our Heritage Samosas" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 3: Vision & Mission -->
+<section style="background-color:#FFF9F5;padding:80px 0;">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="badge mb-2" style="background-color:rgba(255,85,0,0.1);color:#FF5500;padding:8px 18px;border-radius:30px;font-family:'Poppins',sans-serif;font-weight:600;">OUR GUIDING LIGHT</span>
+            <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;">Vision &amp; Mission</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div style="background:#fff;border-radius:20px;padding:45px 35px;height:100%;box-shadow:0 6px 25px rgba(0,0,0,0.06);">
+                    <div style="width:65px;height:65px;border-radius:50%;background:rgba(255,85,0,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:25px;">
+                        <i class="fas fa-eye" style="font-size:1.6rem;color:#FF5500;"></i>
+                    </div>
+                    <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#211C18;margin-bottom:15px;">Our Vision</h3>
+                    <p style="font-family:'Poppins',sans-serif;color:#555;line-height:1.8;font-size:1.05rem;">
+                        "To become India's most loved samosa brand by consistently delivering memorable taste experiences, celebrating local flavours, and redefining street food standards nationwide."
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div style="background:#fff;border-radius:20px;padding:45px 35px;height:100%;box-shadow:0 6px 25px rgba(0,0,0,0.06);">
+                    <div style="width:65px;height:65px;border-radius:50%;background:rgba(255,85,0,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:25px;">
+                        <i class="fas fa-bullseye" style="font-size:1.6rem;color:#FF5500;"></i>
+                    </div>
+                    <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:#211C18;margin-bottom:15px;">Our Mission</h3>
+                    <p style="font-family:'Poppins',sans-serif;color:#555;line-height:1.8;font-size:1.05rem;">
+                        "To serve fresh, hygienic, flavorful snacks at affordable prices, upholding authentic recipes with innovative modern twists while empowering local franchise entrepreneurs."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 4: Food Philosophy -->
+<section style="background-color:#fff;padding:80px 0;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                <div style="width:100%;max-height:420px;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,0.08);">
+                    <img src="{% static 'images/samosa_cheese.png' %}" alt="Wholesome Fresh Ingredients" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <span class="badge mb-3" style="background-color:rgba(255,85,0,0.1);color:#FF5500;padding:8px 18px;border-radius:30px;font-family:'Poppins',sans-serif;font-weight:600;">INGREDIENTS &amp; ETHICS</span>
+                <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;margin-bottom:20px;">
+                    Our Food Philosophy
+                </h2>
+                <p style="font-family:'Poppins',sans-serif;color:#555;line-height:1.8;margin-bottom:20px;">
+                    We believe good food begins with honest ingredients. Every spice blend is freshly roasted and stone-ground. Our signature crust utilizes a wholesome 50:50 maida and wheat flour blend for an irresistible crunch with lighter indulgence.
+                </p>
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color:#FF5500;"></i>
+                            <span style="font-family:'Poppins',sans-serif;font-weight:500;">Zero Preservatives</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color:#FF5500;"></i>
+                            <span style="font-family:'Poppins',sans-serif;font-weight:500;">Cold-Pressed Spices</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color:#FF5500;"></i>
+                            <span style="font-family:'Poppins',sans-serif;font-weight:500;">Farm-Fresh Veggies</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle me-2" style="color:#FF5500;"></i>
+                            <span style="font-family:'Poppins',sans-serif;font-weight:500;">No Artificial Colours</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 5: Quality & Hygiene -->
+<section style="background-color:#FFF9F5;padding:80px 0;">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="badge mb-2" style="background-color:rgba(255,85,0,0.1);color:#FF5500;padding:8px 18px;border-radius:30px;font-family:'Poppins',sans-serif;font-weight:600;">UNCOMPROMISED STANDARDS</span>
+            <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;">Quality &amp; Hygiene</h2>
+            <p style="font-family:'Poppins',sans-serif;color:#666;max-width:600px;margin:10px auto 0;">Safety and purity are non-negotiable in everything we prepare.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div style="background:#fff;border-radius:16px;padding:35px 25px;height:100%;box-shadow:0 4px 15px rgba(0,0,0,0.05);text-align:center;">
+                    <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,85,0,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                        <i class="fas fa-hands-wash" style="font-size:1.5rem;color:#FF5500;"></i>
+                    </div>
+                    <h5 style="font-family:'Playfair Display',serif;font-weight:600;margin-bottom:10px;color:#211C18;">Contactless Cooking</h5>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#666;line-height:1.6;margin:0;">
+                        Our kitchens follow strict contactless handling protocols, with regular temperature checks and sanitization.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div style="background:#fff;border-radius:16px;padding:35px 25px;height:100%;box-shadow:0 4px 15px rgba(0,0,0,0.05);text-align:center;">
+                    <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,85,0,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                        <i class="fas fa-temperature-arrow-up" style="font-size:1.5rem;color:#FF5500;"></i>
+                    </div>
+                    <h5 style="font-family:'Playfair Display',serif;font-weight:600;margin-bottom:10px;color:#211C18;">Controlled Frying Oil</h5>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#666;line-height:1.6;margin:0;">
+                        We test oil TPM levels rigorously and replace frying oil daily, guaranteeing crispy taste with zero rancidity.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div style="background:#fff;border-radius:16px;padding:35px 25px;height:100%;box-shadow:0 4px 15px rgba(0,0,0,0.05);text-align:center;">
+                    <div style="width:60px;height:60px;border-radius:50%;background:rgba(255,85,0,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                        <i class="fas fa-box" style="font-size:1.5rem;color:#FF5500;"></i>
+                    </div>
+                    <h5 style="font-family:'Playfair Display',serif;font-weight:600;margin-bottom:10px;color:#211C18;">Eco Food-Grade Boxes</h5>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#666;line-height:1.6;margin:0;">
+                        Packed in custom steam-vented, biodegradable boxes to keep your samosas hot and crispy during transit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 6: Our Speciality -->
+<section style="background-color:#fff;padding:80px 0;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                <span class="badge mb-3" style="background-color:rgba(255,85,0,0.1);color:#FF5500;padding:8px 18px;border-radius:30px;font-family:'Poppins',sans-serif;font-weight:600;">WHAT SETS US APART</span>
+                <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;margin-bottom:20px;">
+                    Our Speciality: Variety, Innovation &amp; Taste
+                </h2>
+                <p style="font-family:'Poppins',sans-serif;color:#555;line-height:1.8;margin-bottom:20px;">
+                    From the timeless Punjabi Aloo Matar to innovative Pizza Samosa, Paneer Tikka, and sweet Chocolate Samosa, our chef-curated selection satisfies both the classic purist and modern foodie.
+                </p>
+                <div class="d-flex flex-column gap-3">
+                    <div class="d-flex align-items-start">
+                        <div style="background:#1F100A;color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.9rem;margin-right:15px;flex-shrink:0;">1</div>
+                        <div>
+                            <h6 style="font-family:'Playfair Display',serif;font-weight:600;margin-bottom:4px;color:#211C18;">Over 50 Unique Varieties</h6>
+                            <p style="font-family:'Poppins',sans-serif;font-size:0.85rem;color:#666;margin:0;">A menu that keeps every visit exciting with rotating seasonal specials.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <div style="background:#1F100A;color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.9rem;margin-right:15px;flex-shrink:0;">2</div>
+                        <div>
+                            <h6 style="font-family:'Playfair Display',serif;font-weight:600;margin-bottom:4px;color:#211C18;">Signature Chutney Trio</h6>
+                            <p style="font-family:'Poppins',sans-serif;font-size:0.85rem;color:#666;margin:0;">Tangy saunth, spicy mint coriander, and garlic burst chutney crafted fresh.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <div style="background:#1F100A;color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.9rem;margin-right:15px;flex-shrink:0;">3</div>
+                        <div>
+                            <h6 style="font-family:'Playfair Display',serif;font-weight:600;margin-bottom:4px;color:#211C18;">Golden Crispy Guarantee</h6>
+                            <p style="font-family:'Poppins',sans-serif;font-size:0.85rem;color:#666;margin:0;">Never soggy, never overly oily — always golden, crisp and satisfying.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div style="width:100%;max-height:420px;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,0.1);">
+                    <img src="{% static 'images/samosa_chaat.png' %}" alt="Our Speciality Samosa Selection" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 7: CTA -->
+<section style="background-color:#1F100A;padding:80px 0;" data-aos="fade-up">
+    <div class="container text-center text-white">
+        <h2 style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;margin-bottom:20px;color:#fff;">
+            Ready to Try the Crunch?
+        </h2>
+        <p style="font-family:'Poppins',sans-serif;font-size:1.15rem;color:rgba(255,255,255,0.85);max-width:650px;margin:0 auto 35px;">
+            Order your favourite piping-hot samosas and snacks online now or visit one of our stores today!
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="{% url 'orders:order_page' %}" class="btn" style="background-color:#FF5500;color:#fff;border-radius:30px;padding:14px 35px;font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;border:2px solid #FF5500;transition:all 0.3s;">
+                Order Online Now
+            </a>
+            <a href="{% url 'products:menu' %}" class="btn" style="border:2px solid #FFB347;color:#fff;border-radius:30px;padding:14px 35px;font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;transition:all 0.3s;">
+                Explore Menu
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

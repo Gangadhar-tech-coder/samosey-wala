@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Franchise Opportunities — Samosey Wala{% endblock %}
+{% block meta_description %}Partner with India's fastest growing snack brand. Explore franchise opportunities with Samosey Wala and launch your successful food business.{% endblock %}
+
+{% block content %}
+
+<!-- Hero Banner -->
+<section class="section-cream" style="background-color:#FFF9F5;padding:120px 0 60px;">
+    <div class="container text-center" data-aos="fade-up">
+        <span class="badge mb-3" style="background-color:rgba(255,85,0,0.1);color:#FF5500;padding:8px 20px;border-radius:30px;font-family:'Poppins',sans-serif;font-weight:600;">PARTNERSHIP OPPORTUNITY</span>
+        <h1 style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:#211C18;margin-bottom:15px;">
+            Grow With Samosey Wala
+        </h1>
+        <p style="font-family:'Poppins',sans-serif;font-size:1.15rem;color:#666;max-width:700px;margin:0 auto 20px;">
+            Be part of a growing Indian snack brand built around quality, flavour and exceptional customer experience.
+        </p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center" style="font-family:'Poppins',sans-serif;font-size:0.95rem;">
+                <li class="breadcrumb-item"><a href="{% url 'core:home' %}" style="color:#FF5500;text-decoration:none;">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color:#666;">Franchise</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Brand Philosophy & Store Experience -->
+<section style="background-color:#fff;padding:80px 0;">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                <span class="badge mb-3" style="background-color:rgba(255,85,0,0.1);color:#FF5500;padding:8px 18px;border-radius:30px;font-family:'Poppins',sans-serif;font-weight:600;">WHY PARTNER WITH US</span>
+                <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#211C18;margin-bottom:20px;">
+                    A Proven, Profitable &amp; Modern Snack Model
+                </h2>
+                <p style="font-family:'Poppins',sans-serif;color:#555;line-height:1.8;margin-bottom:20px;">
+                    Samosey Wala combines the immense popularity of Indian street food with modernized standard operating procedures, high margin unit economics, and tech-driven store management.
+                </p>
+                <p style="font-family:'Poppins',sans-serif;color:#555;line-height:1.8;margin-bottom:0;">
+                    Our turnkey store formats—from compact kiosks to dine-in snack cafes—are engineered for rapid setup, minimal wastage, and consistent high-margin returns. We provide end-to-end support ranging from site selection to chef training and raw material supply.
+                </p>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div style="width:100%;max-height:420px;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,0.1);">
+                    <img src="{% static 'images/outlettype1.png' %}" alt="Samosey Wala Outlet Model" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Feature Highlights -->
+        <div class="row g-4 pt-3">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div style="background:#FFF9F5;border-radius:16px;padding:35px 25px;height:100%;">
+                    <div style="width:55px;height:55px;border-radius:50%;background:#FF5500;color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                        <i class="fas fa-chart-line" style="font-size:1.3rem;"></i>
+                    </div>
+                    <h5 style="font-family:'Playfair Display',serif;font-weight:700;color:#211C18;margin-bottom:10px;">High Return on Investment</h5>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#666;line-height:1.6;margin:0;">
+                        Low initial capital requirement combined with high ticket frequencies and strong gross profit margins.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div style="background:#FFF9F5;border-radius:16px;padding:35px 25px;height:100%;">
+                    <div style="width:55px;height:55px;border-radius:50%;background:#FF5500;color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                        <i class="fas fa-truck-fast" style="font-size:1.3rem;"></i>
+                    </div>
+                    <h5 style="font-family:'Playfair Display',serif;font-weight:700;color:#211C18;margin-bottom:10px;">Centralized Supply Chain</h5>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#666;line-height:1.6;margin:0;">
+                        Consistent taste guaranteed across all outlets with pre-blended spices and proprietary preparation guides.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div style="background:#FFF9F5;border-radius:16px;padding:35px 25px;height:100%;">
+                    <div style="width:55px;height:55px;border-radius:50%;background:#FF5500;color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                        <i class="fas fa-bullhorn" style="font-size:1.3rem;"></i>
+                    </div>
+                    <h5 style="font-family:'Playfair Display',serif;font-weight:700;color:#211C18;margin-bottom:10px;">Marketing &amp; Launch Support</h5>
+                    <p style="font-family:'Poppins',sans-serif;font-size:0.9rem;color:#666;line-height:1.6;margin:0;">
+                        Full brand launch campaigns, digital marketing, store branding assets, and grand opening promotions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Franchise Enquiry Form Section -->
+<section style="background-color:#FFF9F5;padding:80px 0 100px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8" data-aos="fade-up">
+                <div style="background:#fff;border-radius:24px;padding:50px 40px;box-shadow:0 8px 35px rgba(0,0,0,0.06);border:1px solid #FFB347;">
+                    
+                    <div class="text-center mb-4">
+                        <h3 style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:#211C18;margin-bottom:10px;">
+                            Apply for a Franchise
+                        </h3>
+                        <p style="font-family:'Poppins',sans-serif;color:#666;font-size:0.95rem;">
+                            Take the first step towards owning a thriving Samosey Wala store. Fill out the application form below.
+                        </p>
+                    </div>
+
+                    {% if success %}
+                    <div class="alert alert-success d-flex align-items-center mb-4" role="alert" style="border-radius:12px;font-family:'Poppins',sans-serif;">
+                        <i class="fas fa-check-circle me-2 font-size-lg"></i>
+                        <div>Thank you for your interest! Your franchise application has been received. Our expansion team will get in touch shortly.</div>
+                    </div>
+                    {% endif %}
+
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags|default:'info' }} d-flex align-items-center mb-4" role="alert" style="border-radius:12px;font-family:'Poppins',sans-serif;">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <div>{{ message }}</div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <form method="POST" action="{% url 'enquiries:franchise' %}">
+                        {% csrf_token %}
+
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <label for="id_full_name" class="form-label fw-semibold" style="font-family:'Poppins',sans-serif;color:#211C18;">Full Name *</label>
+                            <input type="text" class="form-control {% if errors.full_name %}is-invalid{% endif %}" id="id_full_name" name="full_name" required placeholder="e.g. Rahul Sharma" style="border-radius:12px;padding:12px 16px;">
+                            {% if errors.full_name %}
+                            <div class="invalid-feedback">{{ errors.full_name }}</div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Email & Phone -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="id_email" class="form-label fw-semibold" style="font-family:'Poppins',sans-serif;color:#211C18;">Email Address *</label>
+                                <input type="email" class="form-control {% if errors.email %}is-invalid{% endif %}" id="id_email" name="email" required placeholder="rahul@example.com" style="border-radius:12px;padding:12px 16px;">
+                                {% if errors.email %}
+                                <div class="invalid-feedback">{{ errors.email }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="id_phone" class="form-label fw-semibold" style="font-family:'Poppins',sans-serif;color:#211C18;">Phone Number *</label>
+                                <input type="tel" class="form-control {% if errors.phone %}is-invalid{% endif %}" id="id_phone" name="phone" required placeholder="10-digit mobile number" style="border-radius:12px;padding:12px 16px;">
+                                {% if errors.phone %}
+                                <div class="invalid-feedback">{{ errors.phone }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- City & State -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="id_city" class="form-label fw-semibold" style="font-family:'Poppins',sans-serif;color:#211C18;">City *</label>
+                                <input type="text" class="form-control {% if errors.city %}is-invalid{% endif %}" id="id_city" name="city" required placeholder="e.g. Pune, Jaipur, Lucknow" style="border-radius:12px;padding:12px 16px;">
+                                {% if errors.city %}
+                                <div class="invalid-feedback">{{ errors.city }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="id_state" class="form-label fw-semibold" style="font-family:'Poppins',sans-serif;color:#211C18;">State *</label>
+                                <input type="text" class="form-control {% if errors.state %}is-invalid{% endif %}" id="id_state" name="state" required placeholder="e.g. Maharashtra, Rajasthan" style="border-radius:12px;padding:12px 16px;">
+                                {% if errors.state %}
+                                <div class="invalid-feedback">{{ errors.state }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Preferred Location -->
+                        <div class="mb-3">
+                            <label for="id_preferred_location" class="form-label fw-semibold" style="font-family:'Poppins',sans-serif;color:#211C18;">Preferred Location / Commercial Area</label>
+                            <input type="text" class="form-control" id="id_preferred_location" name="preferred_location" placeholder="e.g. High Street Market, Mall, Tech Park" style="border-radius:12px;padding:12px 16px;">
+                        </div>
+
+                        <!-- Message -->
+                        <div class="mb-4">
+                            <label for="id_franchise_message" class="form-label fw-semibold" style="font-family:'Poppins',sans-serif;color:#211C18;">Prior Business Experience / Notes</label>
+                            <textarea class="form-control" id="id_franchise_message" name="message" rows="4" placeholder="Tell us about your background, available space (if any), and questions..." style="border-radius:12px;padding:12px 16px;"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn w-100" style="background-color:#FF5500;color:#fff;border-radius:30px;padding:14px;font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;border:none;box-shadow:0 4px 15px rgba(255,85,0,0.3);transition:all 0.3s;">
+                            Submit Franchise Application <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
