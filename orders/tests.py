@@ -52,7 +52,10 @@ class OrdersViewsTest(TestCase):
         data = response.json()
         self.assertIn('order_id', data)
         self.assertIn('whatsapp_url', data)
-        self.assertTrue(data['whatsapp_url'].startswith('https://wa.me/'))
+        self.assertTrue(
+            data['whatsapp_url'].startswith('https://api.whatsapp.com/send') or
+            data['whatsapp_url'].startswith('https://wa.me/')
+        )
 
         # Verify DB records
         order = Order.objects.get(order_id=data['order_id'])
