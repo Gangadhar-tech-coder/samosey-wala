@@ -13,13 +13,14 @@ def run_seed():
     config = SiteConfiguration.get_config()
     config.site_name = "Samosey Wala"
     config.tagline = "Hot and Crispy Samosas"
-    config.phone = "+91 98765 43210"
+    config.phone = "+91 93981 15836"
     config.email = "hello@samoseywala.com"
     config.address = "Shop #12, Food Street, Connaught Place, New Delhi - 110001"
-    config.whatsapp_number = "919876543210"
+    config.whatsapp_number = "919398115836"
     config.business_hours = "10:00 AM - 10:00 PM (Daily)"
-    config.facebook_url = "https://facebook.com/samoseywala"
-    config.instagram_url = "https://instagram.com/samoseywala"
+    config.facebook_url = "https://www.facebook.com/share/1FCbzKgvAb/"
+    config.instagram_url = "https://www.instagram.com/samoseywala?obrf=bDJmM3h2amJoM29t"
+    config.google_maps_embed = "https://share.google/4vIexwh28SNf4u6KO"
     config.twitter_url = "https://twitter.com/samoseywala"
     config.youtube_url = "https://youtube.com/samoseywala"
     config.save()

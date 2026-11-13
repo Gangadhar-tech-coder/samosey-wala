@@ -105,9 +105,15 @@ def place_order(request):
     if special_instructions:
         message_lines.append(f'📝 Instructions: {special_instructions}')
 
+    import os
     from core.models import SiteConfiguration
     site_config = SiteConfiguration.get_config()
-    whatsapp_number = site_config.whatsapp_number or '919398115836'
+    # Prioritize environment variable if set on Render, then database, then hardcoded fallback
+    whatsapp_number = os.environ.get('WHATSAPP_NUMBER') or site_config.whatsapp_number or '919398115836'
+    # Sanitize whatsapp_number to only digits
+    whatsapp_number = ''.join(c for c in str(whatsapp_number) if c.isdigit())
+    if not whatsapp_number:
+        whatsapp_number = '919398115836'
 
     message_text = '\n'.join(message_lines)
     whatsapp_url = f'https://api.whatsapp.com/send?phone={whatsapp_number}&text={quote(message_text)}'
