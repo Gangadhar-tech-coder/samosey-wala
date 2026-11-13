@@ -233,6 +233,22 @@ def run_seed():
 
     print(f"Seed complete! Categories: {Category.objects.count()}, Products: {Product.objects.count()}, Testimonials: {Testimonial.objects.count()}")
 
+    # Ensure admin superuser exists
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
+    admin_user, created = User.objects.get_or_create(
+        username="admin",
+        defaults={"email": "admin@samoseywala.com", "is_staff": True, "is_superuser": True}
+    )
+    admin_user.set_password("admin123")
+    admin_user.is_staff = True
+    admin_user.is_superuser = True
+    admin_user.save()
+    if created:
+        print("Superuser 'admin' created with password 'admin123'")
+    else:
+        print("Superuser 'admin' password updated to 'admin123'")
+
 
 if __name__ == "__main__":
     run_seed()
